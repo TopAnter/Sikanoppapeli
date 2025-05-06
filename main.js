@@ -1,19 +1,27 @@
-let vuoro1 = false
+let pelaajaMaara = 0
+let pelaajat = []
 
-document.getElementById("pyorautus1").addEventListener("click", painallus)
+document.getElementById("pyorautus1").addEventListener("click", heitto)
+document.getElementById("lisaaPelaaja").addEventListener("click", pelLisays)
+document.getElementById("aloitusForm").addEventListener("submit", aloitaPeli)
 
-function painallus(event){
-    let luku1 = Math.floor(Math.random() * 6) + 1;
-    if(vuoro1 == false){
-        document.getElementById("kenVuor1").innerText = "Pelaaja 2 Vuoro"
-        vuoro1 = true
-        event.preventDefault()
-        return
+function heitto(event){
+    event.preventDefault()
+}
+
+function pelLisays(event){
+    pelaajat.push(0)
+    let uusiP = document.createElement("p")
+    uusiP.textContent = "pelaaja " + (pelaajaMaara + 1) + ": " + document.getElementById("pelaajaNimi").value + " pisteet: " + pelaajat[pelaajaMaara]
+    uusiP.id = (pelaajaMaara + 1)
+    document.getElementById("pelaajaLista").append(uusiP)
+    pelaajaMaara = pelaajaMaara + 1
+    event.preventDefault()
+}
+
+function aloitaPeli(event){
+    if(document.getElementById("versioValinta").value = 1){
+        document.getElementById("peli1").style.display = "block"
     }
-    if(vuoro1 == true){
-        document.getElementById("kenVuor1").innerText = "Pelaaja 2 Vuoro"
-        event.preventDefault()
-        vuoro1 = false
-        return
-    }
+    event.preventDefault()
 }
