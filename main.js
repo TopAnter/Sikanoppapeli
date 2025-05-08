@@ -20,8 +20,12 @@ function pelLisays(event){
 }
 
 function aloitaPeli(event){
-    if(document.getElementById("versioValinta").value = 1){
-        document.getElementById("peli1").style.display = "block"
+    if(pelaajat.length() > 1){
+        if(document.getElementById("versioValinta").value = 1){
+            document.getElementById("peli1").style.display = "block"
+        }
+    }else{
+        document.getElementById("ilmoitus").innerText = "Ei tarpeeksi pelaajia (2 vaadittu)"
     }
     event.preventDefault()
 }
