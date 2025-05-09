@@ -1,5 +1,6 @@
 let pelaajaMaara = 0
 let pelaajat = []
+let peliMenossa = false
 
 document.getElementById("pyorautus1").addEventListener("click", heitto)
 document.getElementById("lisaaPelaaja").addEventListener("click", pelLisays)
@@ -7,6 +8,8 @@ document.getElementById("aloitusForm").addEventListener("submit", aloitaPeli)
 
 
 function heitto(event){
+    let luku = Math.floor(Math.random() * 6) + 1
+    console.log(luku)
     event.preventDefault()
 }
 
